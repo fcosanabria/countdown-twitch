@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Countdown timer for Twitch</title>
+    <style>
+        #countdown {
+            @import url('https://fonts.googleapis.com/css2?family=Cantarell&display=swap');
+            font-family: 'Cantarell', sans-serif;
+            font-size: 250px;
+            color: rgb(255, 255, 255);
+            /* add shadow */
+            text-shadow: 0 0 60px rgb(0, 0, 0);
+            text-align: center;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+   <div id="countdown"></div>
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+    <script>
+        const goLive = moment("2022-09-07 22:00:00", "YYYY-MM-DD HH:mm:ss A");
+        setInterval(()=> {[]
+            let timeLeft = goLive.diff(moment());
+            document.getElementById("countdown").innerHTML = moment.utc(timeLeft).format("mm:ss");
+        }, 1000);
+    </script>
+</body>
+</html>
